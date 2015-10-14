@@ -36,7 +36,7 @@ if (localStorage.getItem("exchangeRate_lastUpdated") &&
         success: function(t) {
             console.log("hit API, saving exchange rate to localStorage");
             localStorage.setItem("exchangeRate_lastUpdated", (Date.now / 1000 | 0) + 86400);
-            localStorage.setItem("exchangeRate_value", 0.00);
+            localStorage.setItem("exchangeRate_value", t.rates.USD);
             addUsd(t.rates.USD);
         }
     });
